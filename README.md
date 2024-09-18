@@ -6,6 +6,8 @@ A parser for OneDrive .odl files.
 MIT
 
 ## Requirements & Installation
+```pip install -r requirements.txt``` 
+
 Python 3.7+ and the following modules
 - construct
 - pycryptodome
@@ -66,22 +68,20 @@ By default, irrelevant functions and/or those with empty parameters
 are not displayed. This can be toggled with the -d option.
 ```
 
-### Example
+### Example (Windows command line w/ python on path)
 ```
-% python3 odl.py -o ~/Desktop/odl_output.csv ~/Desktop/testing
-WARNING: Multiple instances of some keys were found in the ObfuscationMap.
-Recovered Unobfuscation key Mfv+fea23ca234VpoEc63Vawq+dae82uUKc=, version=1, utf_type=utf16
-Read 26401 items from map
-Searching  /Users/ykhatri/Desktop/testing/SyncEngine-2022-02-13.0355.840.786.odlgz
-Wrote 1 rows
-Searching  /Users/ykhatri/Desktop/testing/SyncEngine-2022-02-13.0354.840.775.odlgz
-Wrote 40 rows
-
-  ... output snipped ...
-
-Searching  /Users/ykhatri/Desktop/testing/SyncEngine-2022-02-13.0355.840.787.aodl
-Wrote 772 rows
-Finished processing files, output is at /Users/ykhatri/Desktop/odl_output.csv
+python .\odl.py -d -o output/test.csv "C:\Users\<user>\AppData\Local\Microsoft\OneDrive\logs\Common\"
 ```
-#### Output Snippet from odl_output.csv
-<img width="1275" alt="image" src="https://user-images.githubusercontent.com/13247440/153752356-a513e9c9-7ae8-481a-9d96-d146f8914e68.png">
+>"ObfuscationStringMap.txt" not found in ~\AppData\Local\Microsoft\OneDrive\logs\Common.
+Recovered Unobfuscation key [REDACTED], version=1, utf_type=utf16
+Searching  ~\AppData\Local\Microsoft\OneDrive\logs\Common\FileCoAuth-2024-09-18.1616.23360.1.odl
+Wrote 59 rows
+Searching  ~\AppData\Local\Microsoft\OneDrive\logs\Common\FileCoAuth-2024-09-18.1630.21688.1.odl
+Wrote 846 rows
+Searching  ~\AppData\Local\Microsoft\OneDrive\logs\Common\FileSyncConfig-2024-09-18.1616.25140.1.odl
+Error in read_string()
+Error in read_string()
+Wrote 6 rows
+Searching  ~\AppData\Local\Microsoft\OneDrive\logs\Common\FileCoAuth-2024-09-18.1630.21688.2.aodl
+Wrote 5 rows
+Finished processing files, output is at output/test.csv

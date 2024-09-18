@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""
+r"""
 (c) 2021-2023 Yogesh Khatri, @SwiftForensics 
 
 Read OneDrive .ODL files
@@ -50,8 +50,8 @@ import zlib
 
 from construct import *
 from construct.core import Int32ul, Int64ul
-from Crypto.Cipher import AES
-from Crypto.Util.Padding import pad, unpad
+from Cryptodome.Cipher import AES
+from Cryptodome.Util.Padding import pad, unpad
 
 control_chars = ''.join(map(chr, range(0,32))) + ''.join(map(chr, range(127,160)))
 not_control_char_re = re.compile(f'[^{control_chars}]' + '{4,}')
